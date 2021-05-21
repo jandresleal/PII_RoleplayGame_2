@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Knight : ICharacter
+    public class Knight : INormalCharacter
     {
         private int health = 100;
 
@@ -11,17 +12,29 @@ namespace RoleplayGame
 
         public string Name { get; set; }
 
-        public Sword Sword { get; set; }
-
-        public Shield Shield { get; set; }
-
-        public Armor Armor { get; set; }
-
+        public List<INormalItem> Items { get; private set;}
+        public void AddItem(INormalItem item)
+        {
+            Items.Add(item);
+        }
+        public void RemoveItem(INormalItem item)
+        {
+            Items.Remove(item);
+        }
+        
         public int AttackValue
         {
             get
             {
-                return Sword.AttackValue;
+                int attack = 0;
+                foreach (INormalItem item in Items)
+                {
+                    if (typeof(IAttackItem).IsInstanceOfType(item))
+                    {
+                        attack += ((IAttackItem)item).AttackValue;
+                    }
+                }
+                return attack;
             }
         }
 
@@ -29,7 +42,15 @@ namespace RoleplayGame
         {
             get
             {
-                return Armor.DefenseValue + Shield.DefenseValue;
+                int defense = 0;
+                foreach (INormalItem item in Items)
+                {
+                    if (typeof(IDefenseItem).IsInstanceOfType(item))
+                    {
+                        defense += ((IDefenseItem)item).DefenseValue;
+                    }
+                }
+                return defense;
             }
         }
 
