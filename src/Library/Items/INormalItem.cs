@@ -2,7 +2,7 @@
 //
 namespace RoleplayGame
 {
-    public interface IMagicalItem : IItem
+    public interface INormalItem : IItem
     {
 
     }

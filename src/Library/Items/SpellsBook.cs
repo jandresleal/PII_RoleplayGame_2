@@ -2,16 +2,16 @@ using System.Collections.Generic;
 
 namespace RoleplayGame
 {
-    public class SpellsBook : IItem
+    public class SpellsBook : IMagicalAttackItem, IMagicalDefenseItem
     {
-        public Spell[] Spells { get; set; }
+        public List<ISpell> Spells { get; private set; }
         
         public int AttackValue
         {
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (ISpell spell in this.Spells)
                 {
                     value += spell.AttackValue;
                 }
@@ -24,7 +24,7 @@ namespace RoleplayGame
             get
             {
                 int value = 0;
-                foreach (Spell spell in this.Spells)
+                foreach (ISpell spell in this.Spells)
                 {
                     value += spell.DefenseValue;
                 }

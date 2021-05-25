@@ -1,6 +1,7 @@
+using System.Collections.Generic;
 namespace RoleplayGame
 {
-    public class Wizard : ICharacter
+    public class Wizard : IMagicalCharacter
     {
         private int health = 100;
 
@@ -10,16 +11,33 @@ namespace RoleplayGame
         }
 
         public string Name { get; set; }
-
-        public SpellsBook SpellsBook { get; set; }
-
-        public Staff Staff { get; set; }
-
+        public List<IItem> Items { get; private set;}
+        public void AddItem(IItem item)
+        {
+            Items.Add(item);
+        }
+        public void RemoveItem(IItem item)
+        {
+            Items.Remove(item);
+        }
+        
         public int AttackValue
         {
             get
             {
-                return SpellsBook.AttackValue + Staff.AttackValue;
+                int attack = 0;
+                foreach (IItem item in Items)
+                {
+                    if (typeof(IAttackItem).IsInstanceOfType(item))
+                    {
+                        attack += ((IAttackItem)item).AttackValue;
+                    }
+                    if (typeof(IMagicalAttackItem).IsInstanceOfType(item))
+                    {
+                        attack += ((IMagicalAttackItem)item).AttackValue;
+                    }
+                }
+                return attack;
             }
         }
 
@@ -27,7 +45,19 @@ namespace RoleplayGame
         {
             get
             {
-                return SpellsBook.DefenseValue + Staff.DefenseValue;
+                int defense = 0;
+                foreach (IItem item in Items)
+                {
+                    if (typeof(IDefenseItem).IsInstanceOfType(item))
+                    {
+                        defense += ((IDefenseItem)item).DefenseValue;
+                    }
+                    if (typeof(IMagicalDefenseItem).IsInstanceOfType(item))
+                    {
+                        defense += ((IMagicalDefenseItem)item).DefenseValue;
+                    }
+                }
+                return defense;
             }
         }
 

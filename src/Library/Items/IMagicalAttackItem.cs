@@ -3,7 +3,7 @@
 namespace RoleplayGame
 
 {
-    public interface IAttackItem : INormalItem
+    public interface IMagicalAttackItem : IMagicalItem
     {
 
         int AttackValue { get; }
