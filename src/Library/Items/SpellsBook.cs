@@ -31,5 +31,9 @@ namespace RoleplayGame
                 return value;
             }
         }
+        public void AddSpell (ISpell spell)
+        {
+            Spells.Add(spell);
+        }
     }
 }
