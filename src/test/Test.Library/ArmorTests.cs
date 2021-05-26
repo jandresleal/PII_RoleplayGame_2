@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using RoleplayGame;
+using System;
 
 namespace Test.Library
 {
@@ -9,13 +10,14 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Armor Chestplate = new Armor();
+         this.Chestplate = new Armor();
+        
         }
 
         [Test]
         public void TestGetDefense()
         {
-          Assert.AreEqual(25, Chestplate.DefenseValue);  
+            Assert.AreEqual(25, Chestplate.DefenseValue);  
         }
     }
 }

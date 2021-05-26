@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Helmet HelmOfHador = new Helmet();
+         this.HelmOfHador = new Helmet();
         }
 
         [Test]

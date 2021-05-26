@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Shield RoundShield = new Shield();
+         this.RoundShield = new Shield();
         }
 
         [Test]
