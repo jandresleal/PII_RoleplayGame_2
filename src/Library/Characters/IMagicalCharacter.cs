@@ -1,5 +1,6 @@
-// Decidimos crear una interface para implementar un tipo character 
-// con los metodos comunes a todos los personajes.
+// Acorde a la Interface ICharacter, creamos un subtipo IMagicalCharacter
+// La diferencia es que, este subtipo puede tener una lista de IItems, de esta manera
+// incluímos la posibilidad de que use INormalItems e IMagicalItems indistintamente.
 using System.Collections.Generic;
 namespace RoleplayGame
 
