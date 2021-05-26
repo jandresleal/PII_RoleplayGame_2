@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Staff GandalfStaff = new Staff();
+         this.GandalfStaff = new Staff();
         }
 
         [Test]

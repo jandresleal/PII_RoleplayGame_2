@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Bow Belthronding = new Bow();
+         this.Belthronding = new Bow();
         }
 
         [Test]

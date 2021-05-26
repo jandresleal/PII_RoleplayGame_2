@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Sword Anduir = new Sword();
+         this.Anduir = new Sword();
         }
 
         [Test]

@@ -9,7 +9,7 @@ namespace Test.Library
         [SetUp]
         public void Setup()
         {
-         Axe DurinAxe = new Axe();
+         this.DurinAxe = new Axe();
         }
 
         [Test]
