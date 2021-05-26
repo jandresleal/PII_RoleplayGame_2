@@ -9,7 +9,7 @@ namespace RoleplayGame
 
         int Health { get; }
 
-        string Name { get; set; }
+        string Name { get; }
 
         int AttackValue { get; }
 

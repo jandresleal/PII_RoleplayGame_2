@@ -9,9 +9,10 @@ namespace RoleplayGame
         public Archer(string name)
         {
             this.Name = name;
+            this.Items = new List<INormalItem>{};
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
         public List<INormalItem> Items { get; private set;}
         public void AddItem(INormalItem item)
         {
