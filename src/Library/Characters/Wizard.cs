@@ -8,9 +8,10 @@ namespace RoleplayGame
         public Wizard(string name)
         {
             this.Name = name;
+            this.Items = new List<IItem>{};
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
         public List<IItem> Items { get; private set;}
         public void AddItem(IItem item)
         {
