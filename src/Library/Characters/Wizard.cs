@@ -1,3 +1,6 @@
+//Haciendo uso de tipos, Wizard es el unico Character que puede utilizar todos los objetos del tipo Iitem
+//Esto se debe a que es el único que tiene la capacidad de utilizar items normales y mágicos
+//por eso lo definimos como un subtipo de ICharacter que es IMagicalCharacter
 using System.Collections.Generic;
 namespace RoleplayGame
 {
