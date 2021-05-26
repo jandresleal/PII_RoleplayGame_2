@@ -22,16 +22,16 @@ namespace Program
             gimli.AddItem(new Helmet());
             gimli.AddItem(new Shield());
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
-            Console.WriteLine($"Gandalf attacks Gimli with ⚔️ {gandalf.AttackValue}");
+            Console.WriteLine($"Gimli has {gimli.Health} HP points");
+            Console.WriteLine($"Gandalf attacks Gimli with {gandalf.AttackValue} points.");
 
             gimli.ReceiveAttack(gandalf.AttackValue);
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            Console.WriteLine($"Gimli has {gimli.Health} HP");
 
             gimli.Cure();
 
-            Console.WriteLine($"Gimli has ❤️ {gimli.Health}");
+            Console.WriteLine($"Gimli has {gimli.Health} HP");
         }
     }
 }
